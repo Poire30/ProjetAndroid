@@ -16,12 +16,14 @@ public class PokedexListView extends AppCompatActivity {
         setContentView(R.layout.layout);
         Controller controller = new Controller(this);
         controller.start();
+
     }
 
 
-
     public void showList(List<Pokemon> pokemonList) {
-
+        for (int i=0; i<pokemonList.size() ; i++){
+            System.out.println(pokemonList.get(i).getName());
+        }
     }
 
 }

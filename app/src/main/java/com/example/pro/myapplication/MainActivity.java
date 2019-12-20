@@ -53,6 +53,35 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+    BroadcastReceiver showEvolution = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().toString().equals(Common.KEY_NUM_EVOLUTION)){
+
+
+                //Remplacer fragment
+                Fragment detailFragment = PokemonDetail.getInstance();
+
+                Bundle bundle = new Bundle();
+                String num = intent.getStringExtra("num");
+                bundle.putString("num",num);
+                detailFragment.setArguments(bundle);
+
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.remove(detailFragment);
+                fragmentTransaction.replace(R.id.list_pokemon_fragment,detailFragment);
+                fragmentTransaction.addToBackStack("detail");
+                fragmentTransaction.commit();
+
+                //Definir le nom du Pokemon pour la Toolbar
+                Pokemon pokemon = Common.findPokemonByNum(num);
+                toolbar.setTitle(pokemon.getName());
+
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,19 +91,23 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("Pokedex");
         setSupportActionBar(toolbar);
 
-        //Register Broadcast
+        //Broadcasts
         LocalBroadcastManager.getInstance(this)
                 .registerReceiver(showDetail, new IntentFilter(Common.KEY_ENABLE_HOME));
 
+        LocalBroadcastManager.getInstance(this)
+                .registerReceiver(showEvolution, new IntentFilter(Common.KEY_NUM_EVOLUTION));
+
+
     }
-    //!!!
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
        switch(item.getItemId())
        {
            case android.R.id.home:
                toolbar.setTitle("Pokedex");
-               getSupportFragmentManager().popBackStack("Details", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+               getSupportFragmentManager().popBackStack("detail", FragmentManager.POP_BACK_STACK_INCLUSIVE);
 
                getSupportActionBar().setDisplayShowHomeEnabled(false);
                getSupportActionBar().setDisplayHomeAsUpEnabled(false);

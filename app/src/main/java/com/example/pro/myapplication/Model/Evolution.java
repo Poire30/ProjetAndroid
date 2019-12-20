@@ -1,15 +1,15 @@
 package com.example.pro.myapplication.Model;
 
-public class NextEvolution {
+public class Evolution {
     private String num;
     private String name;
 
-    public NextEvolution(String num, String name) {
+    public Evolution(String num, String name) {
         this.num = num;
         this.name = name;
     }
 
-    public NextEvolution(String num) {
+    public Evolution(String num) {
 
         this.num = num;
     }

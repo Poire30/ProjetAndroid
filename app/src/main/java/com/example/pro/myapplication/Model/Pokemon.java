@@ -19,8 +19,28 @@ public class Pokemon {
     private String spawn_time;
     private List<Double> multipliers;
     private List<String> weaknesses;
-    private List<NextEvolution> next_evolution;
-    private List<PrevEvolution> prev_evolution;
+    private List<Evolution> next_evolution;
+    private List<Evolution> prev_evolution;
+
+    public Pokemon(int id, String num, String name, String img, List<String> type, String height, String weight, String candy, int candy_count, String egg, double spawn_chance, double avg_spawns, String spawn_time, List<Double> multipliers, List<String> weaknesses, List<Evolution> next_evolution, List<Evolution> prev_evolution) {
+        this.id = id;
+        this.num = num;
+        this.name = name;
+        this.img = img;
+        this.type = type;
+        this.height = height;
+        this.weight = weight;
+        this.candy = candy;
+        this.candy_count = candy_count;
+        this.egg = egg;
+        this.spawn_chance = spawn_chance;
+        this.avg_spawns = avg_spawns;
+        this.spawn_time = spawn_time;
+        this.multipliers = multipliers;
+        this.weaknesses = weaknesses;
+        this.next_evolution = next_evolution;
+        this.prev_evolution = prev_evolution;
+    }
 
     public Pokemon() {
     }
@@ -145,19 +165,19 @@ public class Pokemon {
         this.weaknesses = weaknesses;
     }
 
-    public List<NextEvolution> getNext_evolution() {
+    public List<Evolution> getNext_evolution() {
         return next_evolution;
     }
 
-    public void setNext_evolution(List<NextEvolution> next_evolution) {
+    public void setNext_evolution(List<Evolution> next_evolution) {
         this.next_evolution = next_evolution;
     }
 
-    public List<PrevEvolution> getPrev_evolution() {
+    public List<Evolution> getPrev_evolution() {
         return prev_evolution;
     }
 
-    public void setPrev_evolution(List<PrevEvolution> prev_evolution) {
+    public void setPrev_evolution(List<Evolution> prev_evolution) {
         this.prev_evolution = prev_evolution;
     }
 }

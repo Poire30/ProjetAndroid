@@ -36,8 +36,10 @@ https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json
 
 ### Améliorations possibles:
 
-• Utilisation plus poussée des fragments: liste déroulantes, fonction de recherche etc...
+• Utilisation plus poussée des fragments (cas de la compatibilité avec tablettes).
 
-• Compatibilité avec les tablettes.
+• Ajout de nouvelles fonctionnalités: fonction de recherche, fonction de tri par attributs etc...
 
-• Amélioration du design.
+• Utilisation d'une API plus riche en données.
+
+• Nouveau design.

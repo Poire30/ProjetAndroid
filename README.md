@@ -5,7 +5,7 @@
 
 ### Fonctionnalités:
 
-• Répertorier les 151 premiers Pokémon dont les données ont été extraites à partir de cette API:
+• Répertorier dans une liste les 151 premiers Pokémon dont les données sont extraites à partir d'une API externe:
 https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json
 
 <img src="http://image.noelshack.com/fichiers/2019/51/5/1576880466-1.jpg" width="220"/> 

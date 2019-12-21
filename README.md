@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json
 
 ### Ce que j'ai appris à utiliser grâce ce projet:
 
-• Retrofit: Très pour l'accés à des données externes.
+• Retrofit: Très utile pour l'accés à des données externes.
 
 <img src="http://image.noelshack.com/fichiers/2019/51/5/1576880467-4.jpg" width="220"/>
 
